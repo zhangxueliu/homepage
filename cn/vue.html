@@ -9,16 +9,21 @@
     <title>welcom to web page</title>
     <meta name="Keywords" content="blog"/>
     <meta name="description"/>
-    <script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../libs/vue.js"></script>
     <script type="text/javascript">    	    	
     $(document).ready(function(){
-        $('#test').text("hello, this is a page");
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
     });
     </script>
 </head>
 <body ms-controller="root">
-	<div id='test'>
-	    body
+	<div id="app">
+      {{ message }}
 	</div>
 </body>
 </html>
