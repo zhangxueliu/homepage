@@ -9,8 +9,16 @@
     <title>welcom to web page</title>
     <meta name="Keywords" content="blog"/>
     <meta name="description"/>
+    <script type="text/javascript" src="libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">    	    	
+        $(document).ready(function(){
+            $('#test').val('this is a page info');
+        });
+    </script>
 </head>
 <body ms-controller="root">
-welcom to web page
+	<div id='test'>
+	    welcom to web page
+	</div>
 </body>
 </html>
