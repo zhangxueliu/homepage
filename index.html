@@ -6,11 +6,6 @@
     <meta http-equiv="expires" content="0">
     <title>»¶Ó­Äú</title>
     <script type="text/javascript">
-
-        $(document).ready(function(){
-            $('#test').val('this is a page info');
-        });
-
         var ispc = function() {
             var userAgentInfo = navigator.userAgent;
             var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod","MicroMessenger","micromessenger"];
@@ -23,8 +18,7 @@
                 }
             }
             return flag;
-        }
-        
+        }        
         console.log('ispc:', ispc());
     	  window.location.href = ispc() ? "cn/" :  "mobile/cn/";
     </script>
