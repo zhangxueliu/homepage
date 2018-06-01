@@ -28,8 +28,9 @@
     app.controller('siteCtrl', function($scope, $http) {
 		$http({
 			method: 'GET',
-			url: 'https://www.runoob.com/try/angularjs/data/sites.php'
+			url: 'https://cn.bing.com'
 		}).then(function successCallback(response) {
+			alert('successfull!');
 			$scope.names = response.data.sites;
 		}, function errorCallback(response) {
 			// 请求失败执行代码
