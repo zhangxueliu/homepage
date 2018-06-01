@@ -33,6 +33,9 @@
 			$scope.names = response.data.sites;
 		}, function errorCallback(response) {
 			// 请求失败执行代码
+		    alert('error');
+			console.log('error');
+			console.log('error:', 'log');
 		});
     });
 
