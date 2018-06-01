@@ -23,13 +23,11 @@
 
 
     <script type="text/javascript">    	    	
-    $(document).ready(function(){
-        var app = angular.module('myApp', []);
-        app.controller('siteCtrl', function($scope, $http) {
-		    $http.get("http://www.runoob.com/try/angularjs/data/sites.php")
-		    .success(function (response) {$scope.names = response.sites;});
-		});
-    });
+    var app = angular.module('myApp', []);
+    app.controller('siteCtrl', function($scope, $http) {
+	    $http.get("http://www.runoob.com/try/angularjs/data/sites.php")
+	    .success(function (response) {$scope.names = response.sites;});
+	});
     </script>
 
 </body>
