@@ -28,7 +28,7 @@
     app.controller('siteCtrl', function($scope, $http) {
 		$http({
 			method: 'GET',
-			url: 'http://www.ipaylinks.com/cn/'
+			url: 'https://www.ipaylinks.com/cn/'
 		}).then(function successCallback(response) {
 			alert('successfull!');
 			$scope.names = response.data.sites;
