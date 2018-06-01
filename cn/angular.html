@@ -26,18 +26,18 @@
     var app = angular.module('myApp', []);
 
     app.controller('siteCtrl', function($scope, $http) {
-		$http({
-			method: 'GET',
-			url: 'https://www.ipaylinks.com/cn/'
-		}).then(function successCallback(response) {
-			alert('successfull!');
-			$scope.names = response.data.sites;
-		}, function errorCallback(response) {
-			// 请求失败执行代码
-		    alert('error');
-			console.log('error');
-			console.log('error:', 'log');
-		});
+		    $http({
+		    	method: 'POST',
+		    	url: 'https://www.runoob.com/try/angularjs/data/sites.php'
+		    }).then(function successCallback(response) {
+		    	alert('successfull!');
+		    	$scope.names = response.data.sites;
+		    }, function errorCallback(response) {
+		    	// 请求失败执行代码
+		        alert('error');
+		    	console.log('error');
+		    	console.log('error:', 'log');
+		    });
     });
 
     </script>
