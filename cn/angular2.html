@@ -24,7 +24,7 @@ myApp.controller("test", function($scope, $http) {
 		$scope.myarr = response.data;
 
 		arr1=[];
-		response.data.forEach(
+		$scope.myarr.forEach(
 			function(v){ 
 				arr1.push(v.goodsID);
 		    }
