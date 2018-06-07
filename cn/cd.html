@@ -11,29 +11,32 @@
 <meta name="Keywords" content="blog"/>
 <meta name="description"/>
 <script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
-<script>
 
-$(function(){
-		  $.ajax({
-				      async: false,
-					      type: "GET",
-						      dataType: 'jsonp',
-							      jsonp: 'callback',
-								      jsonpCallback: 'callbackfunction',
-									      url: "https://i2.mediapower.mobi/adpower/vm/Bora/js/test.js",
-										      data: "",
-											      timeout: 3000,
-												      contentType: "application/json;utf-8",
-													      success: function(msg) {
-														        console.log(msg);
-																    }
-																	  });
-		  })
-
-</script>
 </head>
 
 <body>
+	<div id='out'></div>
+	<script>
+function post(URL, PARAMS) { 
+var temp = document.createElement("form"); 
+temp.action = URL; 
+temp.method = "post"; 
+temp.style.display = "none"; 
+for (var x in PARAMS) { 
+var opt = document.createElement("textarea"); 
+opt.name = x; 
+opt.value = PARAMS[x]; 
+temp.appendChild(opt); 
+} 
+document.body.appendChild(temp); 
+temp.submit(); 
+return temp; 
+}
+
+var params = {"callback":"JSON_CALLBACK"};
+var resp = post("https://www.runoob.com/try/angularjs/data/sites.php",params); 
+console.log(resp);
+</script>
 </body>
 
 </html>
