@@ -22,7 +22,7 @@ myApp.controller("test", function($scope, $http) {
 	}).then(function successCallback(response) {
 		console.log(response);
 		$scope.myarr = response.data;
-		console.log(myarr);
+		console.log($scope.myarr);
 
 	}, function errorCallback(response) {
 	    // 请求失败执行代码
