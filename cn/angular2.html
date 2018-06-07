@@ -40,7 +40,7 @@ myApp.controller("test", function($scope, $http) {
   <div ng-controller="test">
     <ul>
 	   <li ng-repeat="data in myarr">
-		       <img src="{{data.goodsListImg}}" />
+		        <p> {{data.goodsListImg}} </p>
 			    <p>名称：<span>{{data.goodsName}}</span></p>
 				<p>价格：<span>{{data.price|currency:"￥"}}</span></p>
 	   </li>
