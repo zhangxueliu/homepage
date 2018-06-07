@@ -14,29 +14,22 @@
 <script type="text/javascript" src="../libs/angular-1.7.0.min.js"></script>
 <script>
 var myApp = angular.module("App", []);
-	myApp.controller("test", function($scope, $http) {
+myApp.controller("test", function($scope, $http) {
 
-	    $http({
-	    	method: 'POST',
-	    	url: 'http://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
-	    }).then(function successCallback(response) {
-	    	  alert('successfull!');
-	    	  $scope.names = response.data.sites;
-	    }, function errorCallback(response) {
-	    	  // 请求失败执行代码
-	        alert('error');
-	    	  console.log('error');
-	    	  console.log('error:', 'log');
-	    });
+    $http({
+	  	method: 'POST',
+	   	url: 'http://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
+	}).then(function successCallback(response) {
+	    alert('successfull!');
+	    $scope.names = response.data.sites;
+	}, function errorCallback(response) {
+	    // 请求失败执行代码
+	    alert('error');
+	    console.log('error');
+	    console.log('error:', 'log');
+	});
 	    	    
-		  myUrl = "http://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK";
-		  $http.jsonp(myUrl).successCallback(function(response) {
-			  console.log(response);
-			  $scope.myarr = response;
-	    });
 });
-
-
 
 
     
