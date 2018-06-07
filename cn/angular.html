@@ -29,13 +29,12 @@
     app.controller('siteCtrl', function($scope, $http) {
 		    $http({
 		    	method: 'POST',
-		    	url: 'https://www.runoob.com/try/angularjs/data/sites.php'
+		    	url: 'https://www.runoob.com/try/angularjs/data/sites.php?callback=JSON_CALLBACK'
 		    }).then(function successCallback(response) {
-		    	alert('successfull!');
 		    	$scope.names = response.data.sites;
+		    	alert('successfull!');
 		    }, function errorCallback(response) {
 		    	// 请求失败执行代码
-		        alert('error');
 		    	console.log('error');
 		    	console.log('error:', 'log');
 		    });
