@@ -16,9 +16,9 @@ var callbackfunction = function(data) {
 	  console.log('我是跨域请求来的数据-->' + data.name);
 };
 var script = document.createElement('script'),
-body = document.getElementsByTagName('body');
 script.src = 'http://i2.mediapower.mobi/adpower/vm/Bora/js/test.js?callback=callbackfunction';
-body[0].appendChild(script);
+document.getElementsByTagName("body")[0].appendChild(script);
+
 
 </script>
 </head>
@@ -26,3 +26,4 @@ body[0].appendChild(script);
 <body>
 </body>
 
+</html>
