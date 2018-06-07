@@ -18,7 +18,7 @@ myApp.controller("test", function($scope, $http) {
 
     $http({
 	  	method: 'POST',
-	   	url: 'http://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
+	   	url: 'https://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
 	}).then(function successCallback(response) {
 	    alert('successfull!');
 	    $scope.names = response.data.sites;
