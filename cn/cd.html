@@ -12,13 +12,23 @@
 <meta name="description"/>
 <script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
 <script>
-var callbackfunction = function(data) {
-	  console.log('我是跨域请求来的数据-->' + data.name);
-};
-var script = document.createElement('script'),
-script.src = 'http://i2.mediapower.mobi/adpower/vm/Bora/js/test.js?callback=callbackfunction';
-document.getElementsByTagName("body")[0].appendChild(script);
 
+$(function(){
+		  $.ajax({
+				      async: false,
+					      type: "GET",
+						      dataType: 'jsonp',
+							      jsonp: 'callback',
+								      jsonpCallback: 'callbackfunction',
+									      url: "http://i2.mediapower.mobi/adpower/vm/Bora/js/test.js",
+										      data: "",
+											      timeout: 3000,
+												      contentType: "application/json;utf-8",
+													      success: function(msg) {
+														        console.log(msg);
+																    }
+																	  });
+		  })
 
 </script>
 </head>
