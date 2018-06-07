@@ -20,19 +20,17 @@ myApp.controller("test", function($scope, $http) {
 	  	method: 'POST',
 	   	url: 'https://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
 	}).then(function successCallback(response) {
-	    alert('successfull!');
-	    $scope.names = response.data.sites;
+		console.log(response);
+		$scope.myarr = response;
 	}, function errorCallback(response) {
 	    // 请求失败执行代码
-	    alert('error');
-	    console.log('error');
+	    console.log(response);
 	    console.log('error:', 'log');
 	});
-	    	    
+
 });
 
 
-    
 </script>
 </head>
 
