@@ -11,32 +11,36 @@
 <meta name="Keywords" content="blog"/>
 <meta name="description"/>
 <script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
-
-</head>
-
-<body>
-	<div id='out'></div>
-	<script>
+<script>
 function post(URL, PARAMS) { 
-var temp = document.createElement("form"); 
-temp.action = URL; 
-temp.method = "post"; 
-temp.style.display = "none"; 
-for (var x in PARAMS) { 
-var opt = document.createElement("textarea"); 
-opt.name = x; 
-opt.value = PARAMS[x]; 
-temp.appendChild(opt); 
-} 
-document.body.appendChild(temp); 
-temp.submit();
-return temp;
+		var temp = document.createElement("form"); 
+		temp.action = URL; 
+		temp.method = "post"; 
+		temp.style.display = "none"; 
+		for (var x in PARAMS) { 
+				var opt = document.createElement("textarea"); 
+				opt.name = x; 
+				opt.value = PARAMS[x]; 
+				temp.appendChild(opt); 
+		}
+
+		document.body.appendChild(temp); 
+		temp.submit();
+		return temp;
 }
 
-var params = {"wd":"mobile"};
-var resp = post("https://www.baidu.com/s",params); 
-console.log(resp);
+funciton callPost() {
+	  alert($("#keyword").val());
+    var params = {"wd":$("#keyword").val()};
+    post("https://www.baidu.com/s",aparams); 
+}
 </script>
-</body>
+</head>
 
+<body >
+<p align="center">
+<input id="keyword" name="keyword" /><input type="button" onclick="callPost()" value="query" />
+<br>
+</p>
+</body>
 </html>
