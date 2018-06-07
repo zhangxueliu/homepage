@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="format-detection" content="telephone=yes">
+<title>welcom to web page</title>
+<meta name="Keywords" content="blog"/>
+<meta name="description"/>
+<script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
+<script>
+var callbackfunction = function(data) {
+	  console.log('我是跨域请求来的数据-->' + data.name);
+};
+var script = document.createElement('script'),
+body = document.getElementsByTagName('body');
+script.src = 'http://i2.mediapower.mobi/adpower/vm/Bora/js/test.js?callback=callbackfunction';
+body[0].appendChild(script);
+
+</script>
+</head>
+
+<body>
+</body>
+
