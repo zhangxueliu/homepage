@@ -29,7 +29,7 @@ function post(URL, PARAMS) {
 		return temp;
 }
 
-funciton callPost() {
+function callPost() {
 	  alert($("#keyword").val());
     var params = {"wd":$("#keyword").val()};
     post("https://www.baidu.com/s",aparams); 
@@ -37,10 +37,10 @@ funciton callPost() {
 </script>
 </head>
 
-<body >
-<p align="center">
-<input id="keyword" name="keyword"> </input></><input type="button" onclick="callPost();" value="query"></input>
-<br>
+<body ><p align="center">
+	
+<input id="keyword" name="keyword"> </input></><input type="button" onclick="callPost();" value="query"></input><br>
+
 </p>
 </body>
 </html>
