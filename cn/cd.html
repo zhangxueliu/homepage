@@ -30,9 +30,9 @@ function post(URL, PARAMS) {
 }
 
 function callPost() {
-	  alert($("#keyword").val());
-    var params = {"wd":$("#keyword").val()};
-    post("https://www.baidu.com/s",params); 
+    //var params = {"wd":$("#keyword").val()};
+    // post("https://www.baidu.com/s",params); 
+    window.location.href='https://www.baidu.com/s?wd='+ $("#keyword").val();    
 }
 </script>
 </head>
