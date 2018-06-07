@@ -22,14 +22,7 @@ myApp.controller("test", function($scope, $http) {
 	}).then(function successCallback(response) {
 		console.log(response);
 		$scope.myarr = response.data;
-
-		arr1=[];
-		$scope.myarr.forEach(
-			function(v){ 
-				arr1.push(v.goodsID);
-		    }
-		);
-		console.log(arr1);
+		console.log(myarr);
 
 	}, function errorCallback(response) {
 	    // 请求失败执行代码
