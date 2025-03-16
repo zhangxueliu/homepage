@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="format-detection" content="telephone=yes">
+    <title>welcom to web page</title>
+    <meta name="Keywords" content="blog"/>
+    <meta name="description"/>
+</head>
+<body ms-controller="root">
+<div id='wrapper'>
+<pre>
+1.自我介绍
+2.项目介绍(简历上的)
+  2.1.陆金所-平安保理项目业务模式
+  2.2.现在公司的[会员系统]数据模型
+  2.3.现在公司的[收单系统]商业模式与项目架构
+3.数据库
+  3.1.数据库拆分,纵向拆分,横向拆分
+  3.2.聚簇索引
+4.Java技术
+  4.1.SpringAop实现有几种方式?
+    答:@Transactional: 当前线程拥有的数据库连接对象如果已经开启事务, 那么就复用当前事务, 没有的话新建一个(默认情况下)
+  4.2.SpringAop实现有几种方式?
+    答:AOP代理:Spring中的AOP代理可以使JDK动态代理, 也可以是CGLIB代理,前者基于接口, 后者基于子类
+  4.3.volatile关键字的作用: 
+    答:使变量在多个线程间可见(可见性)
+  4.4.i++是否为原子操作, i = 1是否为原子操作?
+    答:不是,该操作执行:内存到寄存器中,在寄存器中自增,写回到内存,这三步都有可能被中断;在多线程场景中可以使用原子整型(AtomicInteger)
+  4.3.3个线程A,B,C, A打印'a',B打印'b',C打印'c',3个线程启动开始运行后,如何使屏幕打印出'abcabcabcabc.....'
+  https://github.com/zhangxueliu/commonLib/blob/master/java/ob-practice/com/test/demo/multithreading/synchronize/ABC4.java
+</pre>
+</div>
+</body>
+</html>

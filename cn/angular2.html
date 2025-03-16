@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="format-detection" content="telephone=yes">
+<title>welcom to web page</title>
+<meta name="Keywords" content="blog"/>
+<meta name="description"/>
+<script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../libs/angular-1.7.0.min.js"></script>
+<script>
+var myApp = angular.module("App", []);
+myApp.controller("test", function($scope, $http) {
+
+    $http({
+	  	method: 'POST',
+	   	url: 'https://datainfo.duapp.com/shopdata/getGoods.php?callback=JSON_CALLBACK'
+	}).then(function successCallback(response) {
+		console.log(response);
+		$scope.myarr = response.data;
+
+	}, function errorCallback(response) {
+	    // 请求失败执行代码
+	    console.log(response);
+	    console.log('error:', 'log');
+	});
+
+});
+
+
+</script>
+</head>
+
+<body>
+  <div ng-controller="test">
+    <ul>
+	   <li ng-repeat="data in myarr">
+		        <p> {{data.goodsListImg}} </p>
+			    <p>名称：<span>{{data.goodsName}}</span></p>
+				<p>价格：<span>{{data.price|currency:"￥"}}</span></p>
+	   </li>
+	</ul>
+  </div>
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="format-detection" content="telephone=yes">
+    <title>welcom to web page</title>
+    <meta name="Keywords" content="blog"/>
+    <meta name="description"/>
+	<script type="text/javascript" src="../libs/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../libs/angular-1.7.0.min.js"></script>
+</head>
+<body ms-controller="root">
+
+    <div ng-app="myApp" ng-controller="siteCtrl">
+	<ul>
+	    <li ng-repeat="x in names">
+	      {{ x.Name + ', ' + x.Country }}
+        </li>
+	</ul>
+
+
+    <script type="text/javascript">    	    	
+    var app = angular.module('myApp', []);
+
+    app.controller('siteCtrl', function($scope, $http) {
+		    $http({
+		    	method: 'POST',
+		    	url: 'https://www.runoob.com/try/angularjs/data/sites.php?callback=JSON_CALLBACK'
+		    }).then(function successCallback(response) {
+		    	$scope.names = response.data.sites;
+		    	alert('successfull!');
+		    }, function errorCallback(response) {
+		    	// 请求失败执行代码
+		    	console.log('error');
+		    	console.log('error:', 'log');
+		    });
+    });
+
+    </script>
+
+</body>
+</html>
